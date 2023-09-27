@@ -1,23 +1,15 @@
-import React from "react";
+import React from 'react'
+import AddTask from "./AddTask"
+
 
 export const metadata = {
-  title: "Add Task: Work Manager",
-};
-
-const addTask = () => {
+    title: "Add Task: Work Manager",
+  };
+  
+const AddTaskPage = () => {
   return (
-    <div className="grid grid-cols-12 justify-center ">
-      <div className="p-5 col-span-6 col-start-4 ">
-        <h1 className="text-3xl">Add Your Task Here..</h1>
+   <AddTask />
+  )
+}
 
-        <form action="#!">
-          <div>
-            <label htmlFor="">title</label>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-};
-
-export default addTask;
+export default AddTaskPage

@@ -15,3 +15,12 @@ I FYOU WANT TO WRITE API FOR TODOS IN SAME APP==> app>api>todos>route.js>write a
 episode 13:- 33.17
 MVP********IN CASE IF DYNAMIC ROUTES WHEN USE ANY ID WALA FOLDER USE THE SAME ID(FOLDERNAME E.g;-UserId[folderNAME]) => const {userId} = params
 USE THE SAME NAME AS THE FOLDER TO MATCH ID 
+
+26.9.23
+episode:-17.00  29.23
+
+
+IF YOU WANT TO PRINT SOMETHING IN BODY(BROWSER PAGE) USE 
+{
+    JSON.stringify(task) //objectconverted into string and then printing..
+}

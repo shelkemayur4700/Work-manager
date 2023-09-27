@@ -29,10 +29,10 @@ const CustomNavbar = () => {
       <div>
         <ul className="md:flex space-x-3 font-semibold hidden px-2">
             <li className="hover:text-black hover:font-semibold">
-                <a href="#!">Login</a>
+            <Link href={"/login"}>Login</Link>
             </li>
             <li className="hover:text-black hover:font-semibold">
-                <a href="#!">Sign Up</a>
+            <Link href={"/signup"}>SignUp</Link>
             </li>
         </ul>
         <div className="md:hidden ">

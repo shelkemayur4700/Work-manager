@@ -21,10 +21,10 @@ export async function GET(request) {
 }
 // -------------------------------
 // ------CREATE USER----
-export async function POST(request) {
+export async function POST(request, {params}) {
   // FETCH USER DETAILS FROM REQUEST
   const { name, email, password, about, profileURL } = await request.json();
-  console.log({ name, email, password, about, profileURL });
+  // console.log({ name, email, password, about });
 
   // CREATE USER OBJECT WITH USER MODEL
 
@@ -45,10 +45,15 @@ export async function POST(request) {
     return response;
   } catch (error) {
     console.log(error);
-    return NextResponse.json({
-      message: "failed to create user !!",
-      status: false,
-    });
+    return NextResponse.json(
+      {
+        message: "failed to create user !!",
+        status: false,
+      },
+      {
+        status: 500,
+      }
+    );
   }
   // const body = request.body;
   // console.log(body);
