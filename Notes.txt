@@ -1,0 +1,17 @@
+All routes are based on FOLDER NAMES
+
+if you want to add any data like navbar or footer you can put it in layout above or below of childern
+
+///////////Backend
+api
+just make folder api inside the APP folder and write code for api 
+
+
+e.g==> API FOR USERS ==> FOLDER STRUCTURE ==> app>api>Users>route.js(file)>WRITE ALL ROUTES IN THIS FILE ===>http://localhost:3000/api/users
+I FYOU WANT TO WRITE API FOR TODOS IN SAME APP==> app>api>todos>route.js>write apis for todos{get,post,delete,update} path for api is http://localhost:3000/api/todos \
+
+
+25.9.23
+episode 13:- 33.17
+MVP********IN CASE IF DYNAMIC ROUTES WHEN USE ANY ID WALA FOLDER USE THE SAME ID(FOLDERNAME E.g;-UserId[folderNAME]) => const {userId} = params
+USE THE SAME NAME AS THE FOLDER TO MATCH ID 
