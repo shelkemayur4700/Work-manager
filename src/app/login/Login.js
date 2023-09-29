@@ -71,9 +71,9 @@ const Login = () => {
           </div>
         </form>
       </div>
-      {
+      {/* {
         JSON.stringify(loginData)
-      }
+      } */}
     </div>
   );
 };
