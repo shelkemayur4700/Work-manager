@@ -22,7 +22,7 @@ episode:-17.00  29.23
 
 IF YOU WANT TO PRINT SOMETHING IN BODY(BROWSER PAGE) USE 
 {
-    JSON.stringify(task) //objectconverted into string and then printing..
+    JSON.stringify(task) //objectconverted into string and then printing it
 }
 
 27.9.23
