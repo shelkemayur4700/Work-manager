@@ -30,3 +30,6 @@ episode:21.00 completed
 
 29.9.23
 episode 24: 14.00
+
+10.1.23
+episode 24: 18.00
