@@ -14,7 +14,7 @@ const CustomNavbar = () => {
         </h1>
       </div>
       <div>
-        <ul className="md:flex space-x-5 font-semibold hidden">
+        <ul className="md:flex space-x-5 font-semibold ">
             <li className="hover:text-black hover:font-semibold">
                 <Link href={"/"}>Home</Link>
             </li>
@@ -27,7 +27,7 @@ const CustomNavbar = () => {
         </ul>
       </div>
       <div>
-        <ul className="md:flex space-x-3 font-semibold hidden px-2">
+        <ul className="md:flex space-x-3 font-semibold  px-2">
             <li className="hover:text-black hover:font-semibold">
             <Link href={"/login"}>Login</Link>
             </li>
@@ -35,9 +35,9 @@ const CustomNavbar = () => {
             <Link href={"/signup"}>SignUp</Link>
             </li>
         </ul>
-        <div className="md:hidden ">
+        {/* <div className="md:hidden ">
           <a className="" href="">&#8801;</a>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

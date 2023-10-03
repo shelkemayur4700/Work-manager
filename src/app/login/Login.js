@@ -1,17 +1,39 @@
 "use client";
 
+import { login } from "@/services/userService";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Login = () => {
-    const[loginData, setLoginData] = useState({
-        email:"",
-        password:""
-    })
+  const router = useRouter();
+  // console.log("login frontend", Login);
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
 
-    const handlelogin = (e)=>{
-        e.preventDefault();
-        
+  const handlelogin = async (e) => {
+    e.preventDefault();
+    if (loginData.email.trim() === "" || loginData.password.trim() === "") {
+      toast.info("invalid Data !!", {
+        position: "top-center",
+      });
+      return;
     }
+    try {
+      const result = await login(loginData);
+      console.log(result);
+      toast.success("Logged in", { position: "top-center" });
+      //REDIRECT TO USER PAGE
+      router.push("/Profile/User");
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.message, {
+        position: "top-center",
+      });
+    }
+  };
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-4 col-start-5 ">

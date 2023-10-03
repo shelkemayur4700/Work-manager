@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { User } from "@/models/user";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { connectDb } from "@/helper/db";
+
+connectDb();
 
 export async function POST(request) {
   console.log("login api ---");
@@ -31,7 +34,7 @@ export async function POST(request) {
       },
       process.env.JWT_KEY
     );
-    console.log("here is token ", token);
+    // console.log("here is token ", token);
 
     // 4. SETTING TOKEN IN COOKIE
     const response = NextResponse.json({
@@ -44,7 +47,7 @@ export async function POST(request) {
       httpOnly: true,
     });
 
-    console.log(user);
+    // console.log(user);
     return response;
   } catch (error) {
     console.log(error);
