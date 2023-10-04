@@ -7,7 +7,7 @@ import { connectDb } from "@/helper/db";
 connectDb();
 
 export async function POST(request) {
-  console.log("login api ---");
+  // console.log("login api ---");
   const { email, password } = await request.json();
 
   try {
@@ -40,6 +40,7 @@ export async function POST(request) {
     const response = NextResponse.json({
       message: "success",
       success: true,
+      user: user,
     });
 
     response.cookies.set("authToken", token, {

@@ -6,7 +6,6 @@ import { adDTask } from "@/services/taskServices";
 import { toast } from "react-toastify";
 
 const addTask = () => {
-
   // console.log("rhis is add task")
 
   const [task, setTask] = useState({
@@ -75,7 +74,7 @@ const addTask = () => {
               htmlFor="task_content"
               className="block text-sm font-medium mb-2"
             >
-              title
+              Content
             </label>
             <textarea
               className="w-full p-3  rounded bg-gray-800 focus:ring-gray-400 border border-gray-800"
@@ -108,8 +107,8 @@ const addTask = () => {
               <option value="none" disabled>
                 ---Select Status---{" "}
               </option>
-              <option value="Pending">Pending</option>
-              <option value="Completed">Completed</option>
+              <option value="pending">pending</option>
+              <option value="completed">completed</option>
             </select>
           </div>
           {/* Button actions  */}

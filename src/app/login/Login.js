@@ -1,12 +1,14 @@
 "use client";
 
+import UserContext from "@/context/userContext";
 import { login } from "@/services/userService";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 
 const Login = () => {
   const router = useRouter();
+  const context = useContext(UserContext);
   // console.log("login frontend", Login);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -23,9 +25,10 @@ const Login = () => {
     }
     try {
       const result = await login(loginData);
-      console.log(result);
+      // console.log("from login page", result);
       toast.success("Logged in", { position: "top-center" });
       //REDIRECT TO USER PAGE
+      context.setUser(result.user);
       router.push("/Profile/User");
     } catch (error) {
       console.log(error);

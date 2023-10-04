@@ -10,13 +10,13 @@ const UserProvider = ({ children }) => {
 
   const handlecurrentUser = async () => {
     try {
-      const CurrentUser = await currentUser();
-      console.log("cr user", CurrentUser);
-      setUser({ ...user });
+      const logUser = await currentUser();
+      console.log( logUser);
+      setUser({ ...logUser });
     } catch (error) {
       console.log(error);
-      toast.error("error in loading current user");
-      //   setUser(undefined);
+      // toast.error("error in loading current user");
+        setUser(undefined);
     }
   };
   useEffect(() => {

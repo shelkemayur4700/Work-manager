@@ -16,9 +16,19 @@ export async function login(loginData) {
 }
 
 //CURRENT USER
-export async function currentUser(loginData) {
+export async function currentUser() {
   const result = await httpAxios
-    .get("/api/current", loginData)
-    .then((res) => res.data);
+    .get("/api/current")
+    .then((response) => response.data);
+  // console.log("result of current API", result);
+  return result;
+}
+
+//----------LOGOUT API----
+export async function logout() {
+  const result = await httpAxios
+    .post("/api/logout")
+    .then((response) => response.data);
+  // console.log("result of current API", result);
   return result;
 }
