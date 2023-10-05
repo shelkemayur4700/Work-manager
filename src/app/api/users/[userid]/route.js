@@ -10,6 +10,7 @@ export async function GET(request, { params }) {
   const { userid } = params;
 
   try {
+    await connectDb();
     const singleUser = await User.findById(userid);
     return NextResponse.json({
       message: " get single user.!!",
@@ -28,6 +29,7 @@ export async function DELETE(request, { params }) {
   const { userid } = params;
 
   try {
+    await connectDb();
     await User.deleteOne({
       _id: userid,
     });
@@ -52,7 +54,7 @@ export async function PUT(request, { params }) {
     const { userid } = params;
 
     let userData = await request.json();
-
+    await connectDb();
     let user = await User.findById(userid);
 
     console.log("user", user);
@@ -78,4 +80,3 @@ export async function PUT(request, { params }) {
     });
   }
 }
-

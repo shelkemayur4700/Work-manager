@@ -4,14 +4,14 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { connectDb } from "@/helper/db";
 
-connectDb();
 
 export async function POST(request) {
   // console.log("login api ---");
   const { email, password } = await request.json();
-
+  
   try {
     // 1.GET USER
+    await connectDb();
     const user = await User.findOne({
       email: email,
       // password: password,

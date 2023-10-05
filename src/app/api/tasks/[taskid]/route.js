@@ -1,12 +1,15 @@
 //api/tasks/taskid
 
+import { connectDb } from "@/helper/db";
 import { getResponseMessage } from "@/helper/responseMessage";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
 
+
 //GET SINGLE TASKS
 export async function GET(request, { params }) {
   try {
+    await connectDb();
     const { taskid } = params;
     const singletask = await Task.findById(taskid);
     return NextResponse.json(singletask);
@@ -23,13 +26,14 @@ export async function PUT(request, { params }) {
   try {
     //THIS IS  ALSO THE WAY TO  WRITE UPDATE API AND FOR ANOTHER REFER USER [userid] PUT CALL..
     const { taskid } = params;
-
+    
     const { title, content, status } = await request.json();
-
+    
     let task = await Task.findById(taskid); //we are using let bcz we are updating data and const cannot be changebale..
-
+    
     (task.title = title), (task.content = content), (task.status = status);
-
+    
+    await connectDb();
     const updatedTask = await task.save();
     return NextResponse.json(updatedTask);
   } catch (error) {
@@ -42,7 +46,8 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     const { taskid } = params;
-
+    
+    await connectDb();
     await Task.deleteOne({
       _id: taskid,
     });

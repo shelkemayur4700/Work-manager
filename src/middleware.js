@@ -27,8 +27,8 @@ export function middleware(request) {
   } else {
     if (!authToken) {
       // console.log("unauthorized route worked..");
-      if (request.nextUrl.pathname.startWith("/api")) {
-        return NextResponse.jscon(
+      if (request.nextUrl.pathname.startsWith("/api")) {
+        return NextResponse.json(
           {
             message: "Access Denied !!",
             success: false,

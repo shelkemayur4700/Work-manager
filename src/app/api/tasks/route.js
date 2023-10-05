@@ -6,11 +6,10 @@ import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-connectDb();
-
 //GET ALL TASKS
 export async function GET(request) {
   try {
+    await connectDb();
     const tasks = await Task.find();
 
     return NextResponse.json(tasks);
@@ -37,6 +36,7 @@ export async function POST(request) {
       userId: data._id,
       status,
     });
+    await connectDb();
     const createdTask = await task.save();
     return NextResponse.json(createdTask, {
       status: 201,

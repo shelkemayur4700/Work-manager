@@ -14,3 +14,11 @@ export async function getTasksofUser(userid) {
     .then((response) => response.data);
   return result;
 }
+
+//----------DELETE TASK API------------------
+export async function deleteTask(taskid) {
+  const result = await httpAxios
+    .delete(`/api/tasks/${taskid}`)
+    .then((response) => response.data);
+  return result;
+}

@@ -1,15 +1,22 @@
 import mongoose from "mongoose";
-import { User } from "../models/user";
+
+const config = {
+  isConnected: 0,
+};
 
 export const connectDb = async () => {
+  if (config.isConnected) {
+    return;
+  }
   try {
     // console.log("hdhdhdhd", process.env.MONGO_DB_URL);
-
     const { connection } = await mongoose.connect(process.env.MONGO_DB_URL, {
       dbName: "work_manager",
       // serverSelectionTimeoutMS: 100000,
     });
     console.log("db...connected..");
+    console.log(connection.readyState)
+    config.isConnected = connection.readyState
     // console.log("connectin wit db is....", connection);
     // TESTING AND CREATING NEW USER
     // const uuser = new User({
