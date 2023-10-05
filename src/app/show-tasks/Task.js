@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const Task = ({ task, deleteTaskParent }) => {
   const { user } = useContext(UserContext);
 
+  
   function deletetask(taskid) {
     deleteTaskParent(taskid);
   }
