@@ -5,7 +5,7 @@ import Image from "next/image";
 import { adDTask } from "@/services/taskServices";
 import { toast } from "react-toastify";
 
-const addTask = () => {
+const AddTask = () => {
   // console.log("rhis is add task")
 
   const [task, setTask] = useState({
@@ -130,4 +130,4 @@ const addTask = () => {
   );
 };
 
-export default addTask;
+export default AddTask;

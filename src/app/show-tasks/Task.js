@@ -41,7 +41,7 @@ const Task = ({ task, deleteTaskParent }) => {
             onClick={handledelete}
             className=" bg-gray-950 cursor-pointer hover:bg-gray-900 rounded-full flex w-9 h-9 justify-center items-center"
           >
-            <RxCross2 />
+            <RxCross2/>
           </span>
         </div>
         <p className="mt-2 font-normal">{task.content}</p>
