@@ -1,12 +1,11 @@
 import UserContext from "@/context/userContext";
 import React, { useContext } from "react";
-import { RxCross2 } from "react-icons/Rx";
+
 import Swal from "sweetalert2";
 
 const Task = ({ task, deleteTaskParent }) => {
   const { user } = useContext(UserContext);
 
-  
   function deletetask(taskid) {
     deleteTaskParent(taskid);
   }
@@ -39,9 +38,9 @@ const Task = ({ task, deleteTaskParent }) => {
             //   deletetask(task._id);
             // }}
             onClick={handledelete}
-            className=" bg-gray-950 cursor-pointer hover:bg-gray-900 rounded-full flex w-9 h-9 justify-center items-center"
+            className=" bg-gray-950 cursor-pointer hover:bg-gray-900 rounded-full flex w-20 h-9 justify-center items-center"
           >
-            <RxCross2/>
+            <button className="font-semibold">Delete</button>
           </span>
         </div>
         <p className="mt-2 font-normal">{task.content}</p>
