@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "10.4.16",
     "axios": "^1.5.1",
     "bcryptjs": "^2.4.3",
